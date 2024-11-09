@@ -11,3 +11,13 @@
 body {
   @apply bg-gray-50;
 }
+
+:root:root {
+  /*--adm-color-primary: #a062d4;*/
+  /*--background-color: #123456;*/
+  /*--border-color: #123456;*/
+  /*--border-radius: #123456;*/
+  /*--border-style: #123456;*/
+  /*--border-width: #123456;*/
+  /*--text-color: #123456;*/
+}
