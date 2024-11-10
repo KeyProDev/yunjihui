@@ -36,13 +36,13 @@ export function ProjectsPage() {
   ];
 
   return (
-    <div className="pt-16 pb-20 bg-gray-100">
+    <div className="bg-gray-100">
       {/* Banner */}
       <div className="h-24 bg-gradient-to-r from-red-600 to-red-500 px-4 py-3 mb-4">
         <div className="flex items-center space-x-2">
-          <img 
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=50&q=80" 
-            alt="Bank Logo" 
+          <img
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=50&q=80"
+            alt="Bank Logo"
             className="w-6 h-6"
           />
           <span className="text-white text-sm">中国人民银行</span>

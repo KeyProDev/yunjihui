@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { BottomNav } from './components/layout/BottomNav';
 import { HomePage } from './pages/HomePage';
@@ -7,30 +7,22 @@ import { ActivitiesPage } from './pages/ActivitiesPage';
 import { ProfilePage } from './pages/ProfilePage';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'home':
-        return <HomePage />;
-      case 'projects':
-        return <ProjectsPage />;
-      case 'activities':
-        return <ActivitiesPage />;
-      case 'profile':
-        return <ProfilePage />;
-      default:
-        return <HomePage />;
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      {renderContent()}
-      <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
-    </div>
-  );
+    return (
+        <Router>
+            <div className="h-screen flex flex-col">
+                <Header />
+                <div className={"flex flex-col overflow-y-auto min-h-[calc(100vh-8rem)] p-2"}>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/projects" element={<ProjectsPage />} />
+                        <Route path="/activities" element={<ActivitiesPage />} />
+                        <Route path="/profile" element={<ProfilePage />} />
+                    </Routes>
+                </div>
+                <BottomNav />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
